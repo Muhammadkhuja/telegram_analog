@@ -5,7 +5,7 @@ const User = sequelize.define(
   "users",
   {
     id: {
-      type: DataTypes.BIGINT.UNSIGNED,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -35,11 +35,16 @@ const User = sequelize.define(
     },
     last_seem: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: () => Date.now(),
     },
     created_at: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: () => Date.now(),
+    },
+    refresh_token: {
+      type: DataTypes.STRING
     },
   },
   {
