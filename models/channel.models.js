@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 const Chat = require("./chat.models");
 
 const Channels = sequelize.define(
-  "channenls",
+  "channels",
   {
     id: {
       type: DataTypes.BIGINT,
